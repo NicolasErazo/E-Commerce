@@ -4,9 +4,11 @@ import { User } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
 import { CategoriesService } from 'src/app/services/categories.service';
+import { Router } from '@angular/router';
 
 import { StoreService } from '../../../services/store.service'
 import { Category } from 'src/app/models/product.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nav',
@@ -24,7 +26,8 @@ export class NavComponent implements OnInit {
     private storeService: StoreService,
     private authService: AuthService,
     private userService: UsersService,
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,33 +35,53 @@ export class NavComponent implements OnInit {
       this.counter = products.length;
     });
     this.getAllCategories();
+    this.authService.user$
+      .subscribe(data => {
+        this.profile = data;
+      })
   }
 
   toggleMenu() {
     this.activeMenu = !this.activeMenu;
   }
 
-  login(){
-    this.authService.loginAndGet('nico.lacho@outlook.com','Nicolas1').subscribe(user =>{
-      this.profile = user;
-    })
+  login() {
+    this.authService.loginAndGet('admin@mail.com', 'admin123')
+      .subscribe(() => {
+        this.router.navigate(['/profile']);
+        Swal.fire(
+          'Welcome!',
+          'You are logged in!',
+          'success'
+        );
+      });
   }
 
-  createUser(){
+  createUser() {
     this.userService.createUser({
       name: 'Nicolas Erazo',
       email: 'nico.lacho@outlook.com',
-      password: 'Nicolas1'
-    }).subscribe(rta =>{
-      console.log(rta);
-    })
+      password: 'Nicolas1',
+      role: 'admin'
+    }).subscribe()
   }
 
-  getAllCategories(){
+  getAllCategories() {
     this.categoriesService.getAll()
-    .subscribe(data =>{
-      this.categories = data;
-    });
+      .subscribe(data => {
+        this.categories = data;
+      });
+  }
+
+  logout() {
+    this.authService.logout();
+    this.profile = null;
+    this.router.navigate(['/home']);
+    Swal.fire(
+      'See you later!',
+      'You logged out!',
+      'success'
+    )
   }
 
 }

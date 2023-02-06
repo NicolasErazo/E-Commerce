@@ -14,7 +14,7 @@ import { ProductsService } from './../../../services/products.service';
 export class ProductDetailComponent implements OnInit {
 
   productId: string | null = null;
-  product: Product | null = null;
+  product: Product | null = null; 
 
   constructor(
     private route: ActivatedRoute,
