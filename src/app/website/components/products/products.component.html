@@ -1,0 +1,39 @@
+<div class="products--grid">
+  <app-product [product]="product" *ngFor="let product of products" (addedProduct)="onAddToShoppingCart($event)"
+    (showProduct)="onShowDetails($event)"></app-product>
+</div>
+<div class="center">
+  <button class="button" (click)="loadMore()">Load more</button>&nbsp;
+  <button class="button" (click)="onShowDetails('1231231')">Detail not found</button>
+  <hr>
+  <button class="button" (click)="downloadPDF()">Download PDF</button>&nbsp;
+  <input type="file" (change)="onUpload($event)"><br><br>
+  <img *ngIf="imgRta" [src]="imgRta" style="height: 350px; width: 350px;" alt="">
+</div>
+
+<div class="product-detail" [class.active]="showProductDetail">
+  <div class="card" *ngIf="productChosen">
+    <div class="container">
+      <h1>{{ productChosen.title }}</h1>
+    </div>
+    <swiper [slidesPerView]="1">
+      <ng-template swiperSlide *ngFor="let img of productChosen.images">
+        <img *ngIf="img; else elseImg" [ngSrc]="img" alt="" width="450" height="400">
+        <ng-template #elseImg>
+          <img [src]="imageDefault" width="550" height="450" alt="">
+        </ng-template>
+      </ng-template>
+    </swiper>
+    <div class="container">
+      <p>Description: {{ productChosen.description }}</p>
+      <br>
+      <h2>Price: {{ productChosen.price | currency:'COP' }}</h2>
+      <br>
+      <p>Category: {{ productChosen.category['name'] }}</p>
+    </div>
+    <button class="button" (click)="toggleProductDetail()">Close</button>&nbsp;
+    <button class="button" (click)="updateProduct()">Edit</button>&nbsp;
+    <button class="button" (click)="deleteProduct()">Delete</button>&nbsp;
+    <button class="button" (click)="createNewProduct()">Create</button>
+  </div>
+</div>
