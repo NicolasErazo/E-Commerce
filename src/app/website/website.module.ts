@@ -17,6 +17,7 @@ import { SwiperModule } from 'swiper/angular';
 import { NgOptimizedImage } from '@angular/common';
 
 import { WebsiteRoutingModule } from './website-routing.module';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { WebsiteRoutingModule } from './website-routing.module';
     RecoveryComponent,
     ProfileComponent,
     ProductDetailComponent,
-    LayoutComponent
+    LayoutComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

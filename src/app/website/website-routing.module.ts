@@ -12,6 +12,7 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { LayoutComponent } from './components/layout/layout.component';
 
 import { AuthGuard } from '../guards/auth.guard';
+import { ExitGuard } from '../guards/exit.guard';
 
 const routes: Routes = [
   {
@@ -42,6 +43,11 @@ const routes: Routes = [
         path: 'profile',
         canActivate: [AuthGuard],
         component: ProfileComponent
+      },
+      {
+        path: 'register',
+        canDeactivate: [ExitGuard],
+        component: RegisterComponent
       },
     ]
   },

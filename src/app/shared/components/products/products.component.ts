@@ -99,7 +99,7 @@ export class ProductsComponent implements OnInit {
 
   updateProduct() {
     const changes: UpdateProductDTO = {
-      title: 'Nicolas Erazo'
+      title: 'Producto editado por: Nicolas Erazo'
     }
     const id = this.productChosen.id;
     this.productsService.updateProduct(id, changes).subscribe(data => {
