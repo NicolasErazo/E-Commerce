@@ -17,14 +17,6 @@ export class AuthService {
 
   constructor(private http: HttpClient, private tokenService: TokenService) { }
 
-  getCurrentUser() {
-    const token = this.tokenService.getToken();
-    if (token) {
-      this.getProfile()
-      .subscribe()
-    }
-  }
-
   loginUser(email: string, password: string){
     return this.http.post<Auth>(`${this.apiUrl}/login`, {email, password})
     .pipe(
