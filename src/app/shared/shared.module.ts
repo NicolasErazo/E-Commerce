@@ -9,8 +9,8 @@ import { ImgComponent } from './components/img/img.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductsComponent } from '../shared/components/products/products.component';
 
-import { ReversePipe } from '../shared/pipes/pipes/reverse.pipe';
-import { TimeAgoPipe } from '../shared/pipes/pipes/time-ago.pipe';
+import { ReversePipe } from '../website/pipes/reverse.pipe';
+import { TimeAgoPipe } from '../website/pipes/time-ago.pipe';
 import { HighlightDirective } from '../shared/directives/directives/highlight.directive';
 
 

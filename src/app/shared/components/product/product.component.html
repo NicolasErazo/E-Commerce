@@ -6,7 +6,6 @@
         <p appHighlight>{{ product.title }}</p><br>
         <h2 appHighlight>Price: {{ product.price | currency:'USD' }}</h2><br>
         <h2 *ngIf="product.taxes" appHighlight>Taxes: {{ product.taxes | currency:'USD' }}</h2><br>
-        <!-- <button class="button" (click)="onShowDetails()">See Details</button>-->
         <a routerLink="." [queryParams]="{product: product.id}"><button class="button" >See details</button></a>&nbsp; 
         <button class="button" (click)="onAddToCart()">Add cart</button>
     </div>
