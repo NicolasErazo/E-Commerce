@@ -7,13 +7,13 @@
         </p>
         <div class="messages" [class.active]="isNameFieldInvalid">
             <p class="error">
-                <strong *ngIf="nameField?.hasError('required')">Este campo es requerido</strong>
+                <strong *ngIf="nameField?.hasError('required')">This field is required</strong>
             </p>
             <p class="error">
-                <strong *ngIf="nameField?.hasError('maxlength')">Maximo 10 caracteres</strong>
+                <strong *ngIf="nameField?.hasError('maxlength')">Maximum 10 characters</strong>
             </p>
             <p class="error">
-                <strong *ngIf="nameField?.hasError('pattern')">No debe tener caracteres</strong>
+                <strong *ngIf="nameField?.hasError('pattern')">Must have no characters</strong>
             </p>
         </div>
 
@@ -24,13 +24,13 @@
         </p>
         <div class="messages" [class.active]="isLastFieldInvalid">
             <p class="error">
-                <strong *ngIf="lastField?.hasError('required')">Este campo es requerido</strong>
+                <strong *ngIf="lastField?.hasError('required')">This field is required</strong>
             </p>
             <p class="error">
-                <strong *ngIf="lastField?.hasError('maxlength')">Maximo 10 caracteres</strong>
+                <strong *ngIf="lastField?.hasError('maxlength')">Maximum 10 characters</strong>
             </p>
             <p class="error">
-                <strong *ngIf="lastField?.hasError('pattern')">No debe tener caracteres</strong>
+                <strong *ngIf="lastField?.hasError('pattern')">Must have no characters</strong>
             </p>
         </div>
     </div>
@@ -42,10 +42,10 @@
     </p>
     <div class="messages" [class.active]="isEmailFieldInvalid">
         <p class="error">
-            <strong *ngIf="emailField?.hasError('required')">Este campo es requerido</strong>
+            <strong *ngIf="emailField?.hasError('required')">This field is required</strong>
         </p>
         <p class="error">
-            <strong *ngIf="emailField?.hasError('email')">No es un email valido</strong>
+            <strong *ngIf="emailField?.hasError('email')">It is not a valid email</strong>
         </p>
     </div>
 
@@ -56,24 +56,24 @@
     </p>
     <div class="messages" [class.active]="isAgeFieldInvalid">
         <p class="error">
-            <strong *ngIf="ageField?.hasError('min')">Debe ser mayor de edad</strong>
+            <strong *ngIf="ageField?.hasError('min')">You must be of legal age</strong>
         </p>
         <p class="error">
-            <strong *ngIf="ageField?.hasError('max')">Maximo 100 Años</strong>
+            <strong *ngIf="ageField?.hasError('max')">Maximum 100 years</strong>
         </p>
         <p class="error">
-            <strong *ngIf="ageField?.hasError('required')">Este campo es requerido</strong>
+            <strong *ngIf="ageField?.hasError('required')">This field is required</strong>
         </p>
     </div>
 
     <p>
-        <label for="email">Agree:</label>
         <input [class.is-valid]="isAgreeFieldValid" [class.is-invalid]="isAgreeFieldInvalid" type="checkbox"
             formControlName="agree" />
+            <label for="email">Check me!</label>
     </p>
     <div class="messages" [class.active]="isAgreeFieldInvalid">
         <p class="error">
-            <strong *ngIf="agreeField?.hasError('required')">Acepta los terminos</strong>
+            <strong *ngIf="agreeField?.hasError('required')">Accept the terms</strong>
         </p>
     </div>
 
