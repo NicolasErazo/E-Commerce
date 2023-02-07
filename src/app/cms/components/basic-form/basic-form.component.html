@@ -1,0 +1,177 @@
+<form [formGroup]="form" (ngSubmit)="save($event)">
+    <div formGroupName="fullName">
+        <p>
+            <label for="name">Firstname:</label>
+            <input [class.is-valid]="isNameFieldValid" [class.is-invalid]="isNameFieldInvalid" type="text"
+                formControlName="name" />
+        </p>
+        <div class="messages" [class.active]="isNameFieldInvalid">
+            <p class="error">
+                <strong *ngIf="nameField?.hasError('required')">Este campo es requerido</strong>
+            </p>
+            <p class="error">
+                <strong *ngIf="nameField?.hasError('maxlength')">Maximo 10 caracteres</strong>
+            </p>
+            <p class="error">
+                <strong *ngIf="nameField?.hasError('pattern')">No debe tener caracteres</strong>
+            </p>
+        </div>
+
+        <p>
+            <label for="last">Lastname:</label>
+            <input [class.is-valid]="isLastFieldValid" [class.is-invalid]="isLastFieldInvalid" type="text"
+                formControlName="last" />
+        </p>
+        <div class="messages" [class.active]="isLastFieldInvalid">
+            <p class="error">
+                <strong *ngIf="lastField?.hasError('required')">Este campo es requerido</strong>
+            </p>
+            <p class="error">
+                <strong *ngIf="lastField?.hasError('maxlength')">Maximo 10 caracteres</strong>
+            </p>
+            <p class="error">
+                <strong *ngIf="lastField?.hasError('pattern')">No debe tener caracteres</strong>
+            </p>
+        </div>
+    </div>
+
+    <p>
+        <label for="email">Email:</label>
+        <input [class.is-valid]="isEmailFieldValid" [class.is-invalid]="isEmailFieldInvalid" type="email"
+            formControlName="email" />
+    </p>
+    <div class="messages" [class.active]="isEmailFieldInvalid">
+        <p class="error">
+            <strong *ngIf="emailField?.hasError('required')">Este campo es requerido</strong>
+        </p>
+        <p class="error">
+            <strong *ngIf="emailField?.hasError('email')">No es un email valido</strong>
+        </p>
+    </div>
+
+    <p>
+        <label for="email">Age: </label>
+        <input [class.is-valid]="isAgeFieldValid" [class.is-invalid]="isAgeFieldInvalid" type="number"
+            formControlName="age" />
+    </p>
+    <div class="messages" [class.active]="isAgeFieldInvalid">
+        <p class="error">
+            <strong *ngIf="ageField?.hasError('min')">Debe ser mayor de edad</strong>
+        </p>
+        <p class="error">
+            <strong *ngIf="ageField?.hasError('max')">Maximo 100 Años</strong>
+        </p>
+        <p class="error">
+            <strong *ngIf="ageField?.hasError('required')">Este campo es requerido</strong>
+        </p>
+    </div>
+
+    <p>
+        <label for="email">Agree:</label>
+        <input [class.is-valid]="isAgreeFieldValid" [class.is-invalid]="isAgreeFieldInvalid" type="checkbox"
+            formControlName="agree" />
+    </p>
+    <div class="messages" [class.active]="isAgreeFieldInvalid">
+        <p class="error">
+            <strong *ngIf="agreeField?.hasError('required')">Acepta los terminos</strong>
+        </p>
+    </div>
+
+    <div class="center">
+        <button type="submit">Enviar</button>
+    </div>
+
+</form>
+
+<hr>
+
+<form>
+    <p>
+        <label for="tel">Tel:</label>
+        <input type="tel" [formControl]="telField">
+    </p>
+    <br>
+    <p>
+        <label for="color">Color:</label>
+        <input type="color" [formControl]="colorField">
+    </p>
+    <br>
+    <p>
+        <label for="date">Date:</label>
+        <input type="date" [formControl]="dateField">
+    </p>
+    <br>
+    <p>
+        <label for="number">Number:</label>
+        <input type="number" [formControl]="numberField">
+    </p>
+    <br>
+    <p>
+        <label for="range">Range:</label>
+        <input type="range" [formControl]="rangeField">
+    </p>
+    <br>
+    <p>
+        <label for="time">Time:</label>
+        <input type="time" [formControl]="timeField">
+    </p>
+    <br>
+    <p>
+        <label for="url">Url:</label>
+        <input type="ulr" [formControl]="urlField">
+    </p>
+    <br>
+    <p>
+        <label>Category:</label>
+        <select [formControl]="categoryField">
+            <option value="category-1">Category 1</option>
+            <option value="category-2">Category 2</option>
+            <option value="category-3">Category 3</option>
+            <option value="category-4">Category 4</option>
+            <option value="category-5">Category 5</option>
+        </select>
+    </p>
+    <br>
+    <p>
+        <label>Tag Multiple:</label>
+        <select [formControl]="tagField" multiple>
+            <option value="tag-1">Tag 1</option>
+            <option value="tag-2">Tag 2</option>
+            <option value="tag-3">Tag 3</option>
+            <option value="tag-4">Tag 4</option>
+            <option value="tag-5">Tag 5</option>
+        </select>
+    </p>
+    <br>
+    <p>
+        <label>Gender:</label>
+        <label>
+            <input name="gender" type="radio" value="male" [formControl]="genderField">
+            Male
+        </label>
+        <label>
+            <input name="gender" type="radio" value="female" [formControl]="genderField">
+            Female
+        </label>
+        <label>
+            <input name="gender" type="radio" value="other" [formControl]="genderField">
+            Other
+        </label>
+    </p>
+    <br>
+    <p>
+        <label>Zone:</label>
+        <label>
+            <input name="zone" type="radio" value="zone-1" [formControl]="zoneField">
+            Zone-1
+        </label>
+        <label>
+            <input name="zone" type="radio" value="zone-2" [formControl]="zoneField">
+            Zone-2
+        </label>
+        <label>
+            <input name="zone" type="radio" value="zone-3" [formControl]="zoneField">
+            Zone-3
+        </label>
+    </p>
+</form>

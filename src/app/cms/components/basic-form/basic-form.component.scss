@@ -1,0 +1,64 @@
+.error {
+    color: darkred;
+    font-size: .8rem;
+}
+
+.messages {
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    &.active {
+        opacity: 1;
+    }
+}
+
+button{
+    align-items: center;
+    background-color: #3E51B5;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+input {
+    border: 2px solid;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin: 0.25rem;
+    min-width: 125px;
+    padding: 0.5rem;
+    transition: background-color 0.5s ease-out;
+    &.is-invalid {
+        background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95% 50% rgb(233, 103, 39);
+        background-size: 25px;
+    }
+    &.is-valid {
+        background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg") no-repeat 95% 50% lightgreen;
+        background-size: 25px;
+    }
+}
+
+*{box-sizing:border-box;}
+
+form{
+	width:600px;
+	padding:16px;
+	border-radius:10px;
+	margin:auto;
+	background-color:#ffffff;
+}
+
+form label{
+	width:150px;
+	display:inline-block;
+}
+
+.center{
+    text-align: center;
+    align-items: center;
+}
