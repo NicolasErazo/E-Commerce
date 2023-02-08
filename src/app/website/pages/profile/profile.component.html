@@ -1,13 +1,13 @@
 <div class="container" *ngIf="user">
-    <div class="box">
+  <div class="box">
     <div class="image">
-       <img src="./../../../../assets/images/default.png" alt="">
-      </div>
-      <div class="name_job">{{user.name}}</div>
-      <p>Email: {{user.email}}</p>
-      <p>Role: {{user.role}}</p>
-      <div class="btns">
-        <button *ngIf="user.role === 'admin'" routerLink="/cms">CMS</button>
-      </div>
+      <img src="https://api.lorem.space/image/face?w=640&h=480&r=3950" alt="">
+    </div>
+    <div class="name_job">{{user.name}}</div>
+    <p>Email: {{user.email}}</p>
+    <p>Role: {{user.role}}</p>
+    <div class="btns">
+      <button *ngIf="user.role === 'admin'" routerLink="/cms">CMS</button>
     </div>
   </div>
+</div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { switchMap } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
@@ -62,7 +61,8 @@ export class NavComponent implements OnInit {
       name: 'Nicolas Erazo',
       email: 'nico.lacho@outlook.com',
       password: 'Nicolas1',
-      role: 'admin'
+      role: 'admin',
+      avatar: '',
     }).subscribe()
   }
 
