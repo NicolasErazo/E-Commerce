@@ -23,6 +23,7 @@ export class BasicFormComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       age: ['', [Validators.required, Validators.min(18), Validators.max(100)]],
       agree: [false, [Validators.requiredTrue]],
+      date: ['', [Validators.required]],
     })
   }
 
@@ -42,7 +43,6 @@ export class BasicFormComponent implements OnInit {
 
   telField = new FormControl();
   colorField = new FormControl();
-  dateField = new FormControl();
   numberField = new FormControl();
   rangeField = new FormControl();
   timeField = new FormControl();
@@ -113,6 +113,16 @@ export class BasicFormComponent implements OnInit {
     return this.form.get('agree')?.touched && this.form.get('agree')?.invalid;
   }
 
+  get isDateFieldValid() {
+    // return this.nameField.touched && this.nameField.valid;
+    return this.form.get('date')?.touched && this.form.get('date')?.valid;
+  }
+
+  get isDateFieldInvalid() {
+    // return this.nameField.touched && this.nameField.invalid;
+    return this.form.get('date')?.touched && this.form.get('date')?.invalid;
+  }
+
   save(event: Event): void {
     if (this.form.valid) {
       console.log(this.form.value);
@@ -145,5 +155,8 @@ export class BasicFormComponent implements OnInit {
     return this.form.get('agree');
   }
 
+  get dateField() {
+    return this.form.get('date');
+  }
 
 }

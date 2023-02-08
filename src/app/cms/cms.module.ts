@@ -7,6 +7,7 @@ import { TasksComponent } from './pages/tasks/tasks.component';
 import { GridComponent } from './pages/grid/grid.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { BasicFormComponent } from './components/basic-form/basic-form.component';
+import { MaterialModule } from '../material/material/material.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BasicFormComponent } from './components/basic-form/basic-form.component
   imports: [
     CommonModule,
     CmsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class CmsModule { }

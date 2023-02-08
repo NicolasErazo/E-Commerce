@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { TimeInterceptor } from './interceptors/time.interceptor';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
     FormsModule,
     NgOptimizedImage,
-    QuicklinkModule
+    QuicklinkModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TimeInterceptor, multi: true },

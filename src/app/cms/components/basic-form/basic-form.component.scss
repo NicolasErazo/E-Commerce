@@ -12,20 +12,6 @@
     }
 }
 
-button {
-    align-items: center;
-    background-color: #3E51B5;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 1s;
-}
-
 input {
     border: 2px solid;
     border-radius: 4px;
@@ -36,7 +22,7 @@ input {
     transition: background-color 0.5s ease-out;
 
     &.is-invalid {
-        background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95% 50% rgb(233, 103, 39);
+        background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95% 50%;
         background-size: 25px;
     }
 
@@ -60,6 +46,9 @@ form {
     border-radius: 10px;
     margin: auto;
     background-color: #ffffff;
+    mat-form-field{
+        width: 100%
+    }
 }
 
 form label {
@@ -70,4 +59,8 @@ form label {
 .center {
     text-align: center;
     align-items: center;
+}
+
+mat-checkbox{
+    size: 0.8rem;
 }

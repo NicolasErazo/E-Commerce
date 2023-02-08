@@ -1,84 +1,93 @@
 <form [formGroup]="form" (ngSubmit)="save($event)">
     <div formGroupName="fullName">
-        <p>
-            <label for="name">Firstname:</label>
-            <input [class.is-valid]="isNameFieldValid" [class.is-invalid]="isNameFieldInvalid" type="text"
-                formControlName="name" />
-        </p>
-        <div class="messages" [class.active]="isNameFieldInvalid">
-            <p class="error">
-                <strong *ngIf="nameField?.hasError('required')">This field is required</strong>
-            </p>
-            <p class="error">
-                <strong *ngIf="nameField?.hasError('maxlength')">Maximum 10 characters</strong>
-            </p>
-            <p class="error">
-                <strong *ngIf="nameField?.hasError('pattern')">Must have no characters</strong>
-            </p>
-        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>
+                Firstname:
+            </mat-label>
+            <input matInput [class.is-valid]="isNameFieldValid" [class.is-invalid]="isNameFieldInvalid" type="text"
+                formControlName="name">
+            <mat-error class="error" *ngIf="nameField?.hasError('required')">
+                This field is required
+            </mat-error>
+            <mat-error class="error" *ngIf="nameField?.hasError('maxlength')">
+                Maximum 10 characters
+            </mat-error>
+            <mat-error class="error" *ngIf="nameField?.hasError('pattern')">
+                Must have no characters
+            </mat-error>
+        </mat-form-field>
 
-        <p>
-            <label for="last">Lastname:</label>
-            <input [class.is-valid]="isLastFieldValid" [class.is-invalid]="isLastFieldInvalid" type="text"
-                formControlName="last" />
-        </p>
-        <div class="messages" [class.active]="isLastFieldInvalid">
-            <p class="error">
-                <strong *ngIf="lastField?.hasError('required')">This field is required</strong>
-            </p>
-            <p class="error">
-                <strong *ngIf="lastField?.hasError('maxlength')">Maximum 10 characters</strong>
-            </p>
-            <p class="error">
-                <strong *ngIf="lastField?.hasError('pattern')">Must have no characters</strong>
-            </p>
-        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>
+                Lastname:
+            </mat-label>
+            <input matInput [class.is-valid]="isLastFieldValid" [class.is-invalid]="isLastFieldInvalid" type="text"
+                formControlName="last">
+            <mat-error class="error" *ngIf="lastField?.hasError('required')">
+                This field is required
+            </mat-error>
+            <mat-error class="error" *ngIf="lastField?.hasError('maxlength')">
+                Maximum 10 characters
+            </mat-error>
+            <mat-error class="error" *ngIf="lastField?.hasError('pattern')">
+                Must have no characters
+            </mat-error>
+        </mat-form-field>
     </div>
 
-    <p>
-        <label for="email">Email:</label>
-        <input [class.is-valid]="isEmailFieldValid" [class.is-invalid]="isEmailFieldInvalid" type="email"
-            formControlName="email" />
-    </p>
-    <div class="messages" [class.active]="isEmailFieldInvalid">
-        <p class="error">
-            <strong *ngIf="emailField?.hasError('required')">This field is required</strong>
-        </p>
-        <p class="error">
-            <strong *ngIf="emailField?.hasError('email')">It is not a valid email</strong>
-        </p>
-    </div>
+    <mat-form-field appearance="outline">
+        <mat-label>
+            Email:
+        </mat-label>
+        <input matInput placeholder="pat@example.com" [class.is-valid]="isEmailFieldValid"
+            [class.is-invalid]="isEmailFieldInvalid" type="email" formControlName="email">
+        <mat-error class="error" *ngIf="emailField?.hasError('required')">
+            This field is required
+        </mat-error>
+        <mat-error class="error" *ngIf="emailField?.hasError('email')">
+            It is not a valid email
+        </mat-error>
+    </mat-form-field>
 
-    <p>
-        <label for="email">Age: </label>
-        <input [class.is-valid]="isAgeFieldValid" [class.is-invalid]="isAgeFieldInvalid" type="number"
-            formControlName="age" />
-    </p>
-    <div class="messages" [class.active]="isAgeFieldInvalid">
-        <p class="error">
-            <strong *ngIf="ageField?.hasError('min')">You must be of legal age</strong>
-        </p>
-        <p class="error">
-            <strong *ngIf="ageField?.hasError('max')">Maximum 100 years</strong>
-        </p>
-        <p class="error">
-            <strong *ngIf="ageField?.hasError('required')">This field is required</strong>
-        </p>
-    </div>
+    <mat-form-field appearance="outline">
+        <mat-label>
+            Age:
+        </mat-label>
+        <input matInput [class.is-valid]="isAgeFieldValid" [class.is-invalid]="isAgeFieldInvalid" type="number"
+            formControlName="age">
+        <mat-error class="error" *ngIf="ageField?.hasError('min')">
+            You must be of legal age
+        </mat-error>
+        <mat-error class="error" *ngIf="ageField?.hasError('max')">
+            This field is required
+        </mat-error>
+        <mat-error class="error" *ngIf="ageField?.hasError('required')">
+            This field is required
+        </mat-error>
+    </mat-form-field>
 
-    <p>
-        <input [class.is-valid]="isAgreeFieldValid" [class.is-invalid]="isAgreeFieldInvalid" type="checkbox"
-            formControlName="agree" />
-            <label for="email">Check me!</label>
-    </p>
+    <mat-form-field appearance="outline">
+        <mat-label>Choose a date:</mat-label>
+        <input matInput [class.is-valid]="isDateFieldValid" [class.is-invalid]="isDateFieldInvalid" formControlName="date" [matDatepicker]="picker">
+        <mat-error class="error" *ngIf="dateField?.hasError('required')">
+            This field is required
+        </mat-error>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-checkbox [class.is-valid]="isAgreeFieldValid" [class.is-invalid]="isAgreeFieldInvalid"
+        formControlName="agree">Check me!</mat-checkbox>
+
     <div class="messages" [class.active]="isAgreeFieldInvalid">
-        <p class="error">
-            <strong *ngIf="agreeField?.hasError('required')">Accept the terms</strong>
-        </p>
+        <mat-error class="error" *ngIf="agreeField?.hasError('required')">
+            Accept the terms
+        </mat-error>
     </div>
 
     <div class="center">
-        <button type="submit">Enviar</button>
+        <button mat-raised-button color="primary">Send</button>
     </div>
 
 </form>
@@ -94,11 +103,6 @@
     <p>
         <label for="color">Color:</label>
         <input type="color" [formControl]="colorField">
-    </p>
-    <br>
-    <p>
-        <label for="date">Date:</label>
-        <input type="date" [formControl]="dateField">
     </p>
     <br>
     <p>
