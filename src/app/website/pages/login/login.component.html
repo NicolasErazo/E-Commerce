@@ -1,1 +1,38 @@
-<p>login works!</p>
+<form [formGroup]="formRegister" (ngSubmit)="loginUser($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input placeholder="email" formControlName="email" matInput type="email">
+                        <div *ngIf="formRegister.get('email')?.touched && formRegister.get('email')?.invalid">
+                            <mat-error *ngIf="formRegister.get('email')?.hasError('required')">
+                                This field is required
+                            </mat-error>
+                        </div>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input placeholder="password" formControlName="password" matInput type="password">
+                        <div *ngIf="formRegister.get('password')?.touched && formRegister.get('password')?.invalid">
+                            <mat-error *ngIf="formRegister.get('password')?.hasError('required')">
+                                This field is required
+                            </mat-error>
+                        </div>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit">Login</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

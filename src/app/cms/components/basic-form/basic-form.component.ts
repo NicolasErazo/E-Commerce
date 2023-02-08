@@ -27,6 +27,8 @@ export class BasicFormComponent implements OnInit {
     })
   }
 
+
+
   // form = new FormGroup({
   //   name: new FormControl(),
   //   email: new FormControl(),

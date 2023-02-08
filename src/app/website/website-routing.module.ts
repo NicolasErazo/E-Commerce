@@ -45,6 +45,11 @@ const routes: Routes = [
         component: ProfileComponent
       },
       {
+        path: 'login',
+        canDeactivate: [ExitGuard],
+        component: LoginComponent
+      },
+      {
         path: 'register',
         canDeactivate: [ExitGuard],
         component: RegisterComponent

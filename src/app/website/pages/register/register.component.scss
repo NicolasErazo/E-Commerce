@@ -1,0 +1,51 @@
+@use '@angular/material' as mat;
+
+$candy-app-primary: mat.define-palette(mat.$indigo-palette, 500); 
+
+:host {
+  height: 100vh;
+  background-color: #ffffff;
+  display: block;
+}
+  // --background: linear-gradient(90deg, #1c3643, #273b47 25%, #1e5372);
+form { 
+  background-color: #4CAF50; /* Green */; 
+  width: 90%;
+  margin: 0px auto;
+  position: relative;
+  top: 20px;
+  mat-card{
+    background-color: #4CAF50; /* Green */; 
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  mat-card-actions {
+    background-color: #4CAF50; /* Green */; 
+    display: flex;
+    justify-content: center;
+  }
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  form{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    background-color: #4CAF50; /* Green */; 
+  }
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+  form {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    background-color: #4CAF50; /* Green */; 
+  }
+}

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './pages/home/home.component'; 
@@ -18,6 +19,8 @@ import { NgOptimizedImage } from '@angular/common';
 
 import { WebsiteRoutingModule } from './website-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
+import { MaterialModule } from '../material/material/material.module';
+
 
 
 @NgModule({
@@ -39,7 +42,9 @@ import { FooterComponent } from './components/footer/footer.component';
     SwiperModule,
     NgOptimizedImage,
     SharedModule,
-    QuicklinkModule
+    QuicklinkModule,
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class WebsiteModule { }

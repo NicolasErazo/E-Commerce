@@ -40,7 +40,8 @@
     <div class="info">
       <div class="account">
         <!-- <button class="button" *ngIf="!profile" (click)="createUser()">Create</button>&nbsp; -->
-        <button class="button" *ngIf="!profile; else elseBlock" (click)="login()">Login</button>
+        <button routerLink="/login" class="button" *ngIf="!profile; else elseBlock" >Login</button>&nbsp;
+        <button routerLink="/register" class="button" *ngIf="!profile">Register</button>
         <ng-template #elseBlock>
           <a routerLink="/profile">{{ profile?.email }}</a>&nbsp;
           <button class="button" (click)="logout()">Logout</button>

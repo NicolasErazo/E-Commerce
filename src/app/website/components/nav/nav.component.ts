@@ -44,18 +44,6 @@ export class NavComponent implements OnInit {
     this.activeMenu = !this.activeMenu;
   }
 
-  login() {
-    this.authService.loginAndGet('admin@mail.com', 'admin123')
-      .subscribe(() => {
-        this.router.navigate(['/profile']);
-        Swal.fire(
-          'Welcome!',
-          'You are logged in!',
-          'success'
-        );
-      });
-  }
-
   createUser() {
     this.userService.createUser({
       name: 'Nicolas Erazo',

@@ -1,4 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="save($event)">
+
+    <mat-card-title>Testing</mat-card-title>
+
     <div formGroupName="fullName">
         <mat-form-field appearance="outline">
             <mat-label>
@@ -68,7 +71,8 @@
 
     <mat-form-field appearance="outline">
         <mat-label>Choose a date:</mat-label>
-        <input matInput [class.is-valid]="isDateFieldValid" [class.is-invalid]="isDateFieldInvalid" formControlName="date" [matDatepicker]="picker">
+        <input matInput [class.is-valid]="isDateFieldValid" [class.is-invalid]="isDateFieldInvalid"
+            formControlName="date" [matDatepicker]="picker">
         <mat-error class="error" *ngIf="dateField?.hasError('required')">
             This field is required
         </mat-error>
