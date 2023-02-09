@@ -44,16 +44,6 @@ export class NavComponent implements OnInit {
     this.activeMenu = !this.activeMenu;
   }
 
-  createUser() {
-    this.userService.createUser({
-      name: 'Nicolas Erazo',
-      email: 'nico.lacho@outlook.com',
-      password: 'Nicolas1',
-      role: 'admin',
-      avatar: '',
-    }).subscribe()
-  }
-
   getAllCategories() {
     this.categoriesService.getAll()
       .subscribe(data => {
