@@ -9,6 +9,11 @@
                     <mat-form-field>
                         <mat-label>Email</mat-label>
                         <input placeholder="email" formControlName="email" matInput type="email">
+                        <div *ngIf="formRegister.get('email')?.touched && formRegister.get('email')?.invalid">
+                            <mat-error *ngIf="formRegister.get('email')?.hasError('required')">
+                                Required
+                            </mat-error>
+                        </div>
                     </mat-form-field>
                 </div>
             </div>
@@ -20,6 +25,9 @@
                         <div *ngIf="formRegister.get('password')?.touched && formRegister.get('password')?.invalid">
                             <mat-error *ngIf="formRegister.get('password')?.hasError('invalid_password')">
                                 Must have a Number
+                            </mat-error>
+                            <mat-error *ngIf="formRegister.get('password')?.hasError('required')">
+                                Required
                             </mat-error>
                         </div>
                     </mat-form-field>
@@ -35,6 +43,22 @@
                                 Not Match
                             </mat-error>
                         </div>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-radio-group formControlName="type" aria-label="Select an option">
+                        <mat-radio-button value="company">Company</mat-radio-button>
+                        <mat-radio-button value="user">Customer</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div *ngIf="showCompany" class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Company Name</mat-label>
+                        <input placeholder="email" formControlName="companyName" matInput type="text">
                     </mat-form-field>
                 </div>
             </div>

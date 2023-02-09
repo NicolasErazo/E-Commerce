@@ -9,7 +9,6 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { BasicFormComponent } from './components/basic-form/basic-form.component';
 import { MaterialModule } from '../material/material/material.module';
 
-
 @NgModule({
   declarations: [
     TasksComponent,

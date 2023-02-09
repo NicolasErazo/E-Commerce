@@ -12,6 +12,7 @@ import { MyValidators } from './../../../utils/validators'
 export class RegisterComponent implements onExit {
 
   formRegister!: FormGroup;
+  showCompany: boolean = true;
 
   constructor(private formBuilder: FormBuilder) {
     this.buildFormRegister();
@@ -21,10 +22,24 @@ export class RegisterComponent implements onExit {
     this.formRegister = this.formBuilder.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6), MyValidators.validPassword]],
-      confirmPassword: ['', [Validators.required]]
+      confirmPassword: ['', [Validators.required]],
+      type: ['company', [Validators.required]],
+      companyName: ['', [Validators.required]]
     }, {
       validators: MyValidators.matchPasswords
     });
+
+    this.typeField?.valueChanges
+    .subscribe(value =>{
+      if(value === 'company'){
+        this.companyNameField?.setValidators([Validators.required]);
+        this.showCompany = true;
+      } else {
+        this.companyNameField?.setValidators(null);
+        this.showCompany = false;
+      }
+      this.companyNameField?.updateValueAndValidity();
+    })
   }
 
   saveRegister(event: Event): void {
@@ -48,6 +63,14 @@ export class RegisterComponent implements onExit {
       return false;
     });
     return confirm;
+  }
+
+  get typeField(){
+    return this.formRegister.get('type');
+  }
+
+  get companyNameField(){
+    return this.formRegister.get('companyName');
   }
 
 }
