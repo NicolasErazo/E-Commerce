@@ -1,4 +1,4 @@
-<form [formGroup]="formRegister" (ngSubmit)="saveRegister($event)">
+<!-- <form [formGroup]="formRegister" (ngSubmit)="saveRegister($event)">
     <mat-card>
         <mat-card-header>
             <mat-card-title>Register</mat-card-title>
@@ -59,6 +59,82 @@
                     <mat-form-field>
                         <mat-label>Company Name</mat-label>
                         <input placeholder="email" formControlName="companyName" matInput type="text">
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit">Register</button>
+        </mat-card-actions>
+    </mat-card>
+</form> -->
+
+<form [formGroup]="formRegister" (ngSubmit)="saveRegister($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Register</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input placeholder="email" formControlName="email" matInput type="email">
+                        <div *ngIf="formRegister.get('email')?.touched && formRegister.get('email')?.invalid">
+                            <mat-error *ngIf="formRegister.get('email')?.hasError('required')">
+                                Required
+                            </mat-error>
+                        </div>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input placeholder="name" formControlName="name" matInput type="name">
+                        <div *ngIf="formRegister.get('name')?.touched && formRegister.get('name')?.invalid">
+                            <mat-error *ngIf="formRegister.get('name')?.hasError('required')">
+                                Required
+                            </mat-error>
+                        </div>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Avatar</mat-label>
+                        <input placeholder="url" formControlName="avatar" matInput type="avatar">
+                        <div *ngIf="formRegister.get('avatar')?.touched && formRegister.get('avatar')?.invalid">
+                            <mat-error *ngIf="formRegister.get('avatar')?.hasError('required')">
+                                Required
+                            </mat-error>
+                        </div>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-radio-group formControlName="role" aria-label="Select an option">
+                        <mat-radio-button value="customer">Customer</mat-radio-button>
+                        <mat-radio-button value="admin">Admin</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input placeholder="password" formControlName="password" matInput type="password">
+                        <div *ngIf="formRegister.get('password')?.touched && formRegister.get('password')?.invalid">
+                            <mat-error *ngIf="formRegister.get('password')?.hasError('invalid_password')">
+                                Must have a Number
+                            </mat-error>
+                            <mat-error *ngIf="formRegister.get('password')?.hasError('required')">
+                                Required
+                            </mat-error>
+                        </div>
                     </mat-form-field>
                 </div>
             </div>

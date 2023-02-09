@@ -13,7 +13,7 @@ export class AuthService {
   private user = new BehaviorSubject<User | null>(null);
   user$ = this.user.asObservable();
 
-  private apiUrl = `https://damp-spire-59848.herokuapp.com/api/auth`;
+  private apiUrl = `https://api.escuelajs.co/api/v1/auth`;
 
   constructor(private http: HttpClient, private tokenService: TokenService) { }
 

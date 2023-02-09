@@ -7,7 +7,7 @@ import { CreateUserDTO, User } from '../models/user.model';
 })
 export class UsersService {
 
-  private apiUrl = `https://damp-spire-59848.herokuapp.com/api/users`;
+  private apiUrl = `https://api.escuelajs.co/api/v1/users`;
 
   constructor(private http: HttpClient) { }
 
