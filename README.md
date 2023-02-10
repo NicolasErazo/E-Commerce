@@ -1,27 +1,66 @@
-# MyStore
+<div align="center">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+# MyStore - Angular
 
-## Development server
+This project is a Pokémon-themed website created with Angular.js and the PokeAPI API.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<img src="https://img.shields.io/github/stars/NicolasErazo/E-Commerce">
+<img src="https://img.shields.io/github/forks/NicolasErazo/E-Commerce">
+<img src="https://img.shields.io/github/issues-pr/NicolasErazo/E-Commerce">
+<img src="https://img.shields.io/github/issues/NicolasErazo/E-Commerce">
 
-## Code scaffolding
+</div>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## 📷 Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<img src="../../blob/master/src/assets/images/Screen%231.png" style="width: 100%"  />
+<img src="../../blob/master/src/assets/images/Screen%232.png" style="width: 100%"  />
+<img src="../../blob/master/src/assets/images/Screen%233.png" style="width: 100%"  />
 
-## Running unit tests
+## ⚙ Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Users can:
 
-## Running end-to-end tests
+<img src="https://octodex.github.com/images/spectrocat.png" style="width: 25%" align="right">
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Search for a Pokémon by name and get suggestions based on the matches.
+- Navigate through a list of over 800 Pokémon cards, divided into pages, each card showing the name, ID, and types of the Pokémon.
+- View detailed information about the Pokémon by clicking on a card, divided into sections:
+  - General: Name, Image - Pokemon, Experience, Height, Type and Weight.
 
-## Further help
+## 🛠 Technologies and frameworks
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Languages: HTML, CSS, JavaScript
+- Libraries and APIs: Angular.js, Angular-Material, PokeAPI API
+- Colors
+  - Yellow: #FFD924;
+  - White: #fcfcfc;
+  - Black: #212121;
+  - Red: #bd3736;
+
+## 📥 Installation and configuration
+To download and test the project on your local environment, follow these steps:
+
+1. Make sure you have Node.js and npm installed on your system.
+2. Download or clone the repository into your computer.
+3. In the terminal, access the project directory and run `npm install` to install all the dependencies.
+4. Run `ng serve` to start the development server.
+5. Open your browser and go to `http://localhost:4000` to view the app.
+
+## 📦 Dependencies
+
+- Angular
+- Angular-Material
+
+## 🌎 Deployment on Firebase and website
+
+You can try and interact with the website [here](https://pokeapi-bb219.web.app/home).
+
+## 💼 More projects
+- Portfolio: [NicoPage](https://nicopage.onrender.com/).
+
+## 👥 Contact
+
+- Email: nico.lacho@outlook.com
+- Whatsapp: +57 3193648237
