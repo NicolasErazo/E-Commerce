@@ -2,7 +2,7 @@
 
 # MyStore - Angular
 
-This project is a Pokémon-themed website created with Angular.js and the PokeAPI API.
+This project is an E-Commerce themed website built with Angular and the Platzi Fake Store API.
 
 <img src="https://img.shields.io/github/stars/NicolasErazo/E-Commerce">
 <img src="https://img.shields.io/github/forks/NicolasErazo/E-Commerce">
@@ -34,12 +34,12 @@ Users can:
 ## 🛠 Technologies and frameworks
 
 - Languages: HTML, CSS, JavaScript
-- Libraries and APIs: Angular.js, Angular-Material, PokeAPI API
+- Libraries and APIs: Angular, Angular-Material, Platzi Fake Store API
 - Colors
-  - Yellow: #FFD924;
+  - Green: #4CAF50;
   - White: #fcfcfc;
   - Black: #212121;
-  - Red: #bd3736;
+  - Blue:  #3E51B5;
 
 ## 📥 Installation and configuration
 To download and test the project on your local environment, follow these steps:
@@ -57,7 +57,7 @@ To download and test the project on your local environment, follow these steps:
 
 ## 🌎 Deployment on Firebase and website
 
-You can try and interact with the website [here](https://pokeapi-bb219.web.app/home).
+You can try and interact with the website [here](https://mystore-nicolas.web.app/home).
 
 ## 💼 More projects
 - Portfolio: [NicoPage](https://nicopage.onrender.com/).
