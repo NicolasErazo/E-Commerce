@@ -24,7 +24,7 @@ This project is an E-Commerce themed website built with Angular and the Platzi F
 
 Users can:
 
-<img src="https://octodex.github.com/images/daftpunktocat-guy.gif" style="width: 25%" align="right">
+<img src="https://octodex.github.com/images/daftpunktocat-guy.gif" style="width: 20%" align="right">
 
 - Search for a product and look at its details.
 - Browse through all the categories of the API.
