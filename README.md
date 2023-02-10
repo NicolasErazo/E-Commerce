@@ -24,12 +24,13 @@ This project is an E-Commerce themed website built with Angular and the Platzi F
 
 Users can:
 
-<img src="https://octodex.github.com/images/spectrocat.png" style="width: 25%" align="right">
+<img src="https://octodex.github.com/images/daftpunktocat-guy.gif" style="width: 25%" align="right">
 
-- Search for a Pokémon by name and get suggestions based on the matches.
-- Navigate through a list of over 800 Pokémon cards, divided into pages, each card showing the name, ID, and types of the Pokémon.
-- View detailed information about the Pokémon by clicking on a card, divided into sections:
-  - General: Name, Image - Pokemon, Experience, Height, Type and Weight.
+- Search for a product and look at its details.
+- Browse through all the categories of the API.
+- Enter from the Login form.
+- Register from the Register form to the API.
+- If you are an admin you will have access to a CMS to have full control over the APP
 
 ## 🛠 Technologies and frameworks
 
