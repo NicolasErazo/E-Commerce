@@ -7,6 +7,9 @@ import { ProductsService } from '../../../services/products.service';
 import Swal from 'sweetalert2';
 import { FilesService } from 'src/app/services/files.service';
 
+import SwiperCore, { Navigation, Pagination } from 'swiper/core';
+SwiperCore.use([Navigation, Pagination]);
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -22,8 +25,8 @@ export class ProductsComponent implements OnInit {
   imgRta: string = '';
 
   @Input() products: Product[] = [];
-  @Input() set productId(id: string | null){
-    if(id){
+  @Input() set productId(id: string | null) {
+    if (id) {
       this.onShowDetails(id);
     }
   }
@@ -55,7 +58,7 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
 
   onAddToShoppingCart(product: Product) {
@@ -68,7 +71,7 @@ export class ProductsComponent implements OnInit {
   }
 
   onShowDetails(id: string) {
-    if(!this.showProductDetail){
+    if (!this.showProductDetail) {
       this.showProductDetail = true;
     }
     this.productsService.getProduct(id).subscribe(data => {
@@ -118,16 +121,16 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  downloadPDF(){
-    this.fileService.getFile('NicolasErazo.pdf','https://young-sands-07814.herokuapp.com/api/files/dummy.pdf','application/pdf')
-    .subscribe()
+  downloadPDF() {
+    this.fileService.getFile('NicolasErazo.pdf', 'https://young-sands-07814.herokuapp.com/api/files/dummy.pdf', 'application/pdf')
+      .subscribe()
   }
 
-  onUpload(event: Event){
+  onUpload(event: Event) {
     const element = event.target as HTMLInputElement;
     const file = element.files?.item(0);
-    if(file){
-      this.fileService.uploadFile(file).subscribe(rta =>{
+    if (file) {
+      this.fileService.uploadFile(file).subscribe(rta => {
         this.imgRta = rta.location;
         Swal.fire(
           'Good job!',

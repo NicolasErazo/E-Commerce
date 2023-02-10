@@ -1,19 +1,25 @@
-<div class="page-product">
-    <button class="button" (click)="goToBack()">Back</button>
-    <br><br>
-    <div class="detail" *ngIf="product">
-        <div class="gallery">
-            <swiper [slidesPerView]='1'>
-                <ng-template swiperSlide *ngFor="let img of product?.images">
-                    <img [src]="img" alt="img">
-                </ng-template>
-            </swiper>
-        </div>
-        <div>
-            <h1>{{ product.title }}</h1><br>
-            <h2>Price: {{ product.price | currency }}</h2><br>
-            <p>Description: {{ product.description }}</p><br>
-            <p>Category: {{ product.category['name'] }}</p>
+<div class="card">
+    <div class="page-product">
+        <button class="button" (click)="goToBack()"><i class="fa-solid fa-arrow-left"></i>&nbsp;Back</button><br><br>
+
+        <div class="detail" *ngIf="product">
+            <div class="gallery">
+                <swiper [slidesPerView]="1" [pagination]="{ clickable: true }" [navigation]="true">
+                    <ng-template swiperSlide *ngFor="let img of product?.images">
+                        <img [src]="img" alt="img">
+                    </ng-template>
+                </swiper>
+            </div>
+            <div class="card-info">
+                <h1 class="text-title">{{ product.title }}</h1><br>
+                <p class="text-body">{{ product.description }}</p><br>
+                <p class="text-body">Category: {{ product.category['name'] }}</p>
+                <div class="card-footer">
+                    <p class="text-title">Price: {{ product.price | currency }}</p>
+                    <div class="card-button">
+                        <button class="button"><i class="fa-solid fa-cart-shopping">Add Cart</i>&nbsp;</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>

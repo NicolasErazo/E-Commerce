@@ -16,7 +16,8 @@
     <div class="container">
       <h1>{{ productChosen.title }}</h1>
     </div>
-    <swiper [slidesPerView]="1">
+
+    <swiper [slidesPerView]="1" [pagination]="{ clickable: true }" [navigation]="true">
       <ng-template swiperSlide *ngFor="let img of productChosen.images">
         <img *ngIf="img; else elseImg" [ngSrc]="img" alt="" width="450" height="400">
         <ng-template #elseImg>
@@ -24,6 +25,7 @@
         </ng-template>
       </ng-template>
     </swiper>
+
     <div class="container">
       <p>Description: {{ productChosen.description }}</p>
       <br>
