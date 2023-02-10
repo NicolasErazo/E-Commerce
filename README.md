@@ -14,9 +14,11 @@ This project is a Pokémon-themed website created with Angular.js and the PokeAP
 
 ## 📷 Screenshots
 
-<img src="../../blob/master/src/assets/images/Screen%231.png" style="width: 100%"  />
-<img src="../../blob/master/src/assets/images/Screen%232.png" style="width: 100%"  />
-<img src="../../blob/master/src/assets/images/Screen%233.png" style="width: 100%"  />
+<img src="../../blob/master/src/assets/images/Screen#1.png" style="width: 100%"  />
+<img src="../../blob/master/src/assets/images/Screen#2.png" style="width: 100%"  />
+<img src="../../blob/master/src/assets/images/Screen#3.png" style="width: 100%"  />
+<img src="../../blob/master/src/assets/images/Screen#4.png" style="width: 100%"  />
+<img src="../../blob/master/src/assets/images/Screen#5.png" style="width: 100%"  />
 
 ## ⚙ Features
 
