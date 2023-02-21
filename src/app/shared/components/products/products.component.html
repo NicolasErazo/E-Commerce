@@ -3,12 +3,12 @@
     (showProduct)="onShowDetails($event)"></app-product>
 </div>
 <div class="center">
-  <button class="button" (click)="loadMore()">Load more</button>&nbsp;
-  <button class="button" (click)="onShowDetails('1231231')">Detail not found</button>
-  <hr>
+  <button class="button" (click)="loadMore()">&nbsp;Load more&nbsp;</button>
+  <!-- <button class="button" (click)="onShowDetails('1231231')">Detail not found</button> -->
+  <!-- <hr>
   <button class="button" (click)="downloadPDF()">Download PDF</button>&nbsp;
   <input type="file" (change)="onUpload($event)"><br><br>
-  <img *ngIf="imgRta" [src]="imgRta" style="height: 350px; width: 350px;" alt="">
+  <img *ngIf="imgRta" [src]="imgRta" style="height: 350px; width: 350px;" alt=""> -->
 </div>
 
 <div class="product-detail" [class.active]="showProductDetail">
