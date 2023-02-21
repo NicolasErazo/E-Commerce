@@ -7,6 +7,8 @@
     grid-gap: 20px;
 
     .gallery {
+      position: relative;
+      z-index: 0;
       overflow: hidden;
       width: 100%;
     }

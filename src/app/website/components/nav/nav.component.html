@@ -30,13 +30,11 @@
     <h1>Profile</h1>
     <ul title="Profile">
       <li>
-        <button routerLink="/login" class="button" *ngIf="!profile; else elseBlockMobile" (click)="toggleMenu()"><i class="fa-regular fa-face-smile"></i>&nbsp;Login</button></li>
-      <li>
-        <button routerLink="/register" class="button" *ngIf="!profile" (click)="toggleMenu()"><i class="fa-regular fa-registered"></i>&nbsp;Register</button>
+        <button routerLink="/login" class="button" *ngIf="!profile; else elseBlockMobile" (click)="toggleMenu()"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Login</button>
       </li>
       <ng-template #elseBlockMobile>
         <li><a routerLink="/profile" (click)="toggleMenu()">{{ profile?.email }}</a></li>
-        <li><button class="button" (click)="logout()"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Logout</button></li>
+        <li><button class="button" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</button></li>
       </ng-template>
     </ul>
   </div>
@@ -56,11 +54,10 @@
     </nav>
     <div class="info">
       <div class="account">
-        <button routerLink="/login" class="button" *ngIf="!profile; else elseBlock">Login</button>&nbsp;
-        <button routerLink="/register" class="button" *ngIf="!profile">Register</button>
+        <button routerLink="/login" class="button" *ngIf="!profile; else elseBlock" (click)="toggleMenu()"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Login</button>
         <ng-template #elseBlock>
           <a routerLink="/profile">{{ profile?.email }}</a>&nbsp;
-          <button class="button" (click)="logout()">Logout</button>
+          <button class="button" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</button>
         </ng-template>
       </div>
       <div class="cart">

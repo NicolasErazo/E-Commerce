@@ -42,7 +42,7 @@ export class LoginComponent {
       },
       err =>{
         if (err.status == 401) {
-          Swal.fire('Unauthorized!', 'Ok?', 'error');
+          Swal.fire('Unauthorized', 'wrong email or password!', 'error');
         }
       });
     } else {

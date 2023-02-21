@@ -1,38 +1,38 @@
-<form [formGroup]="formRegister" (ngSubmit)="loginUser($event)">
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Login</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <div class="row">
-                <div class="col-xs">
-                    <mat-form-field>
-                        <mat-label>Email</mat-label>
-                        <input placeholder="email" formControlName="email" matInput type="email">
-                        <div *ngIf="formRegister.get('email')?.touched && formRegister.get('email')?.invalid">
-                            <mat-error *ngIf="formRegister.get('email')?.hasError('required')">
-                                This field is required
-                            </mat-error>
-                        </div>
-                    </mat-form-field>
+<section>
+    <div class="form-box">
+        <div class="form-value">
+            <form [formGroup]="formRegister" (ngSubmit)="loginUser($event)">
+                <h2>Login</h2>
+                <div class="inputbox">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input formControlName="email" matInput type="email" required>
+                    <div *ngIf="formRegister.get('email')?.touched && formRegister.get('email')?.invalid">
+                        <mat-error *ngIf="formRegister.get('email')?.hasError('required')">
+                            This field is required
+                        </mat-error>
+                    </div>
+                    <mat-label>Email</mat-label>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs">
-                    <mat-form-field>
-                        <mat-label>Password</mat-label>
-                        <input placeholder="password" formControlName="password" matInput type="password">
-                        <div *ngIf="formRegister.get('password')?.touched && formRegister.get('password')?.invalid">
-                            <mat-error *ngIf="formRegister.get('password')?.hasError('required')">
-                                This field is required
-                            </mat-error>
-                        </div>
-                    </mat-form-field>
+                <div class="inputbox">
+                    <i class="fa-solid fa-lock"></i>
+                    <input formControlName="password" matInput type="password" required>
+                    <div *ngIf="formRegister.get('password')?.touched && formRegister.get('password')?.invalid">
+                        <mat-error *ngIf="formRegister.get('password')?.hasError('required')">
+                            This field is required
+                        </mat-error>
+                    </div>
+                    <mat-label>Password</mat-label>
                 </div>
-            </div>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button type="submit">Login</button>
-        </mat-card-actions>
-    </mat-card>
-</form>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Remember Me</label>
+
+                </div>
+
+                <button>Log in</button>
+                <div class="register">
+                    <p>Don't have a account <a routerLink="/register">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
