@@ -29,6 +29,21 @@ export class LoginComponent {
     });
   }
 
+  onExit() {
+    const confirm = Swal.fire({
+      title: 'Are you sure?',
+      icon: 'info',
+      showDenyButton: true,
+      confirmButtonText: 'Yes',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        return true;
+      }
+      return false;
+    });
+    return confirm;
+  }
+
   loginUser(event: Event){
     if (this.formRegister.valid) {
       this.authService.loginAndGet(this.formRegister.get('email')?.value, this.formRegister.get('password')?.value)

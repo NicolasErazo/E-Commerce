@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import Swal from 'sweetalert2';
 
 export interface onExit {
   onExit: () => Observable<boolean> | Promise<boolean> | boolean;
