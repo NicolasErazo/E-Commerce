@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { NgOptimizedImage } from '@angular/common';
 import { SwiperModule } from 'swiper/angular';
 
 import { ImgComponent } from './components/img/img.component';
@@ -27,7 +26,6 @@ import { HighlightDirective } from '../shared/directives/directives/highlight.di
   imports: [
     CommonModule,
     RouterModule,
-    NgOptimizedImage,
     SwiperModule
   ],
   exports: [

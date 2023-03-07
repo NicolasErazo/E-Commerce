@@ -15,7 +15,6 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { SwiperModule } from 'swiper/angular';
-import { NgOptimizedImage } from '@angular/common';
 
 import { WebsiteRoutingModule } from './website-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
@@ -40,7 +39,6 @@ import { MaterialModule } from '../material/material/material.module';
     CommonModule,
     WebsiteRoutingModule,
     SwiperModule,
-    NgOptimizedImage,
     SharedModule,
     QuicklinkModule,
     MaterialModule,
