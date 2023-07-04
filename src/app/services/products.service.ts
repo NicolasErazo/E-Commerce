@@ -10,7 +10,7 @@ import { CreateProductDTO, Product } from './../models/product.model';
 })
 export class ProductsService {
 
-  private apiUrl = `https://damp-spire-59848.herokuapp.com/api`;
+  private apiUrl = `https://api.escuelajs.co/api/v1`;
 
   constructor(
     private http: HttpClient

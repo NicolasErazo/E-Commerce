@@ -12,7 +12,7 @@ import { ReversePipe } from '../website/pipes/reverse.pipe';
 import { TimeAgoPipe } from '../website/pipes/time-ago.pipe';
 import { HighlightDirective } from '../shared/directives/directives/highlight.directive';
 
-
+import { NgOptimizedImage } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { HighlightDirective } from '../shared/directives/directives/highlight.di
   imports: [
     CommonModule,
     RouterModule,
-    SwiperModule
+    SwiperModule,
+    NgOptimizedImage
   ],
   exports: [
     ReversePipe,
