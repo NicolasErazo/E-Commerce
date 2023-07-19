@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 import { StoreService } from '../../../services/store.service'
 import { Category } from 'src/app/models/product.model';
-import Swal from 'sweetalert2';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nav',
@@ -53,7 +53,7 @@ export class NavComponent implements OnInit {
     this.authService.logout();
     this.profile = null;
     this.router.navigate(['/home']);
-    Swal.fire(
+    swal.fire(
       'See you later!',
       'You logged out!',
       'success'

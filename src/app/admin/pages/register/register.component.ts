@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { onExit } from 'src/app/guards/exit.guard';
 import { UsersService } from 'src/app/services/users.service';
 
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'
 import { MyValidators } from './../../../utils/validators'
 
 @Component({

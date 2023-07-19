@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { QuicklinkStrategy } from 'ngx-quicklink';
 import { AdminGuard } from './guards/admin.guard';
-import { LoginComponent } from './website/pages/login/login.component';
-import { RegisterComponent } from './website/pages/register/register.component';
 
 const routes: Routes = [
   {
@@ -15,19 +13,16 @@ const routes: Routes = [
     }
   },
   {
+    path: '',
+    loadChildren: () => import('./admin/admin.module').then(module => module.AdminModule),
+    data: {
+      preload: true,
+    }
+  },
+  {
     path: 'cms',
     canActivate: [AdminGuard],
     loadChildren: () => import('./cms/cms.module').then(module => module.CmsModule)
-  },
-  {
-    path: 'login',
-    //   // canDeactivate: [ExitGuard],
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    //   // canDeactivate: [ExitGuard],
-    component: RegisterComponent
   },
   {
     path: '**',
