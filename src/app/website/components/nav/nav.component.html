@@ -56,7 +56,7 @@
       <div class="account">
         <button routerLink="/login" class="button" *ngIf="!profile; else elseBlock" (click)="toggleMenu()"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Login</button>
         <ng-template #elseBlock>
-          <a routerLink="/profile">{{ profile?.email }}</a>&nbsp;
+          <a routerLink="/profile">{{ profile?.name }}</a>&nbsp;
           <button class="button" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</button>
         </ng-template>
       </div>

@@ -91,7 +91,7 @@ export class ProductsComponent implements OnInit {
     const product: CreateProductDTO = {
       title: 'Nicolas Erazo',
       price: 1000,
-      images: [`https://placeimg.com/640/480/any?random=${Math.random()}`],
+      images: [`https://picsum.photos/640/640?r=${Math.floor(Math.random() * 1000)}`],
       description: 'Hola Mundo',
       categoryId: 3
     }

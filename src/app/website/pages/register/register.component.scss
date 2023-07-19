@@ -141,3 +141,29 @@ button {
 .register p a:hover {
   text-decoration: underline;
 }
+
+// Definición de variables
+$button-color: #ffffff; // Color del botón
+$button-hover-color: #4caf50; // Color del botón al pasar el cursor por encima
+$button-padding: 10px 20px; // Espaciado interno del botón
+$button-border-radius: 5px; // Radio de borde del botón
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px !important;
+  padding: $button-padding;
+  background-color: $button-color;
+  border-radius: $button-border-radius;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+
+  // Estilo del botón al pasar el cursor por encima
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}

@@ -11,8 +11,8 @@ section {
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  margin-top: -31px;
-  background: url('../../../../assets/images/background6.jpg')no-repeat;
+  margin-top: 0px;
+  background: url("../../../../assets/images/background6.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -28,7 +28,6 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 h2 {
@@ -52,11 +51,11 @@ h2 {
   color: #fff;
   font-size: 1em;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-input:focus~mat-label,
-input:valid~mat-label {
+input:focus ~ mat-label,
+input:valid ~ mat-label {
   top: -5px;
 }
 
@@ -81,7 +80,7 @@ input:valid~mat-label {
 
 .forget {
   margin: -15px 0 15px;
-  font-size: .9em;
+  font-size: 0.9em;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -89,7 +88,6 @@ input:valid~mat-label {
 
 .forget label input {
   margin-right: 3px;
-
 }
 
 .forget label a {
@@ -115,12 +113,12 @@ button {
 }
 
 button:hover {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: 2px solid #ffffff;
 }
 
 .register {
-  font-size: .9em;
+  font-size: 0.9em;
   color: #fff;
   text-align: center;
   margin: 25px 0 10px;
@@ -134,4 +132,30 @@ button:hover {
 
 .register p a:hover {
   text-decoration: underline;
+}
+
+// Definición de variables
+$button-color: #ffffff; // Color del botón
+$button-hover-color: #4caf50; // Color del botón al pasar el cursor por encima
+$button-padding: 10px 20px; // Espaciado interno del botón
+$button-border-radius: 5px; // Radio de borde del botón
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px !important;
+  padding: $button-padding;
+  background-color: $button-color;
+  border-radius: $button-border-radius;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+
+  // Estilo del botón al pasar el cursor por encima
+  &:hover {
+    background-color: $button-hover-color;
+  }
 }
