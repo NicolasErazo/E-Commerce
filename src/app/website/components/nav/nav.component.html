@@ -7,13 +7,13 @@
       <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
     </a>
     <div class="cart">
-      <a href="">
+      <button (click)="toggleCart()">
         <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
-      </a>
+      </button>
       <span class="counter">{{ counter }}</span>
     </div>
-
   </div>
+
   <div class="side-menu" [class.active]="activeMenu">
     <button (click)="toggleMenu()"><i class="fa-solid fa-xmark"></i>&nbsp;Close</button>
     <h1>_____________________________</h1>
@@ -30,15 +30,29 @@
     <h1>Profile</h1>
     <ul title="Profile">
       <li>
-        <button routerLink="/login" class="button" *ngIf="!profile; else elseBlockMobile" (click)="toggleMenu()"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Login</button>
+        <button routerLink="/login" class="button" *ngIf="!profile; else elseBlockMobile" (click)="toggleMenu()"><i
+            class="fa-solid fa-right-to-bracket"></i>&nbsp;Login</button>
       </li>
       <ng-template #elseBlockMobile>
         <li><a routerLink="/profile" (click)="toggleMenu()">{{ profile?.email }}</a></li>
-        <li><button class="button" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</button></li>
+        <li><button class="button" (click)="logout()"><i
+              class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</button></li>
       </ng-template>
     </ul>
   </div>
+
+  <div class="side-cart" [class.active]="activeCart">
+    <button class="btn" (click)="toggleCart()"><i class="fa-solid fa-xmark"></i>&nbsp;Close</button>
+    <br>
+    <div class="item-product" *ngFor="let product of (myCart$  | async)">
+      <img [src]="product.images[0]" alt="">
+      <p>{{ product.title }}</p>
+      <br>
+    </div>
+  </div>
+
 </div>
+
 <div class="hide-mobile">
   <div>
     <nav>
@@ -54,18 +68,28 @@
     </nav>
     <div class="info">
       <div class="account">
-        <button routerLink="/login" class="button" *ngIf="!profile; else elseBlock" (click)="toggleMenu()"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Login</button>
+        <button routerLink="/login" class="button" *ngIf="!profile; else elseBlock" (click)="toggleMenu()"><i
+            class="fa-solid fa-right-to-bracket"></i>&nbsp;Login</button>
         <ng-template #elseBlock>
           <a routerLink="/profile">{{ profile?.name }}</a>&nbsp;
           <button class="button" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</button>
         </ng-template>
       </div>
       <div class="cart">
-        <a href="">
+        <button class="button" (click)="toggleCart()">
           <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
-        </a>
+        </button>
         <span class="counter">{{ counter }}</span>
       </div>
+    </div>
+  </div>
+
+  <div class="side-cart" [class.active]="activeCart">
+    <button class="btn" (click)="toggleCart()"><i class="fa-solid fa-xmark"></i>&nbsp;Close</button>
+    <br>
+    <div class="item-product" *ngFor="let product of (myCart$  | async)">
+      <img [src]="product.images[0]" alt="">
+      <p>{{ product.title }}</p>
     </div>
   </div>
 </div>

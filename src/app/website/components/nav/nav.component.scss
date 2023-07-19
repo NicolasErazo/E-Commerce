@@ -107,6 +107,24 @@
       transform: translateX(0);
     }
   }
+
+  .side-cart {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transform: translateX(100%);
+    transition: all ease-out 0.5s;
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
 }
 
 .hide-mobile {
@@ -154,6 +172,31 @@
       margin-right: 0.5em;
     }
   }
+
+  .side-cart {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    transform: translateX(100%);
+    transition: all ease-out 0.5s;
+
+
+    overflow-y: auto; // Habilita el scroll vertical
+
+    background: #4caf50;
+
+
+    &.active {
+      transform: translateX(60%);
+    }
+  }
 }
 
 /* Medium only */
@@ -175,5 +218,57 @@
 
   .hide-mobile {
     display: block;
+  }
+}
+
+.content-cart {
+  width: 250px;
+}
+.item-product {
+  display: flex;
+}
+.list {
+  padding: 1rem;
+}
+
+.item-product img {
+  margin-right: 0.5rem;
+  width: 20%;
+  margin-bottom: 1rem;
+  border-radius: 10%;
+}
+
+.item-product p {
+  font-weight: bold;
+  text-align: center;
+  padding-top: 8%;
+}
+
+// Variables para el botón
+$button-background: #fff;
+$button-text-color: #4caf50;
+$button-padding: 10px 20px;
+$button-border: none;
+$button-border-radius: 4px;
+
+// Estilos para el botón
+.btn {
+  display: inline-block;
+  padding: $button-padding;
+  background-color: $button-background;
+  color: $button-text-color;
+  border: $button-border;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($button-background, 10%);
+  }
+
+  &:focus {
+    outline: none;
   }
 }
